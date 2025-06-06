@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator ceny wizyty</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .checkbox-group {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h3>Kalkulator ceny wizyty</h3>
+        <div class="checkbox-group">
+            <input type="checkbox" id="peeling" value="45"> Peeling<br>
+            <input type="checkbox" id="maska" value="30"> Maska<br>
+            <input type="checkbox" id="masaz" value="20"> Masaż twarzy<br>
+            <input type="checkbox" id="makijaz" value="50"> Makijaż<br>
+        </div>
+
+        <button onclick="obliczCene()">Oblicz cenę</button>
+
+        <div class="result">
+            <p id="cena">Cena zabiegu: 0</p>
+        </div>
+    </div>
+
+    <script>
+        function obliczCene() {
+            let suma = 0;
+
+            // Pobieramy stan checkboxów
+            if (document.getElementById("peeling").checked) {
+                suma += 45;
+            }
+            if (document.getElementById("maska").checked) {
+                suma += 30;
+            }
+            if (document.getElementById("masaz").checked) {
+                suma += 20;
+            }
+            if (document.getElementById("makijaz").checked) {
+                suma += 50;
+            }
+
+            // Wyświetlamy wynik
+            document.getElementById("cena").innerText = "Cena zabiegu: " + suma;
+        }
+    </script>
+
+</body>
+</html>
