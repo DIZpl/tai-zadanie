@@ -1,0 +1,73 @@
+ <script>
+        function pobranie()
+        {
+        alert(document.getElementById("pole").value);
+         }
+       </script> 
+    <form>
+        <input type="text" id="pole" value="">
+        <input type="button" value="wyślij" onClick="pobranie()">
+    </form> 
+--------------------------------------------------------
+<input type="text" id="pole" value="sowa">
+
+<script>
+ alert(document.getElementById("pole").value);
+</script>
+----------------------------------------------------------------
+<fieldset>
+    <legend>Wybierz</legend>
+    <input type="radio" value="A" name="radio"> A
+    <input type="radio" value="B" name="radio"> B
+    <input type="radio" value="C" name="radio" checked> C
+</fieldset>
+
+<script>
+var f = document.getElementsByName('radio');
+var v;
+for(var i = 0; i < f.length; i++){
+    if(f[i].checked){
+        v = f[i].value;
+    }
+}
+alert(v);
+</script>
+------------------------------------------------------
+<fieldset>
+</fieldset>
+    <legend>Wybierz ptaki:</legend>
+    <input type="checkbox" value="kos" name="ptaki" /> kos<br>
+    <input type="checkbox" value="gil" name="ptaki" /> gil<br>
+    <input type="checkbox" value="paw" name="ptaki" /> paw<br>
+    <input type="checkbox" value="emu" name="ptaki" /> emu<br>
+</fieldset>
+
+<script>
+var f = document.getElementsByName('ptaki');
+var v ='';
+for(var i = 0; i < f.length; i++){
+    if(f[i].checked){
+        v = v+' '+ f[i].value;
+    }
+}
+if (v=='') {v="Nie dokonałeś żadnego wyboru.";}
+alert(v);
+</script>
+----------------------------------------------------------------
+<select id="ssaki">
+    <option value="kot">kot</option>
+    <option value="jeż">jeż</option>
+    <option value="ryś">ryś</option>
+    <option value="koń">koń</option>
+</select>j
+
+<script>
+ var s=document.getElementById("ssaki");
+ alert('Value przechowuje wartość: '+s.value);
+ alert('selectedIndex zwraca wartość: '+s.selectedIndex);
+ alert('length zwraca wartość: '+s.length);
+</script>
+--------------------------------------------------------------
+<script>
+ document.getElementById('ssaki').options[4] = new Option('jeleń', 'jeleń', 0, 1);
+</script>
